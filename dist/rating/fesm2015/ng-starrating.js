@@ -1,27 +1,26 @@
-import { __decorate } from 'tslib';
-import { Component, EventEmitter, ViewChild, Output, Input, ViewEncapsulation, NgModule } from '@angular/core';
+import { Component, EventEmitter, ViewEncapsulation, ViewChild, Output, Input, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Subject } from 'rxjs';
 
-let RatingComponent = class RatingComponent {
+class RatingComponent {
     constructor() { }
     ngOnInit() {
     }
-};
-RatingComponent = __decorate([
-    Component({
-        selector: 'lib-rating',
-        template: `
+}
+RatingComponent.decorators = [
+    { type: Component, args: [{
+                selector: 'lib-rating',
+                template: `
     <p>
       rating works!
     </p>
   `
-    })
-], RatingComponent);
+            },] }
+];
+RatingComponent.ctorParameters = () => [];
 
-var StarRatingComponent_1;
-let StarRatingComponent = StarRatingComponent_1 = class StarRatingComponent {
+class StarRatingComponent {
     constructor() {
         this.stars = [];
         this._readOnly = false;
@@ -167,13 +166,13 @@ let StarRatingComponent = StarRatingComponent_1 = class StarRatingComponent {
         this.generateRating();
     }
     addDefaultClass(star) {
-        star.classList.add(StarRatingComponent_1.CLS_DEFAULT_STAR);
+        star.classList.add(StarRatingComponent.CLS_DEFAULT_STAR);
     }
     addCheckedStarClass(star) {
-        star.classList.add(StarRatingComponent_1.CLS_CHECKED_STAR);
+        star.classList.add(StarRatingComponent.CLS_CHECKED_STAR);
     }
     addHalfStarClass(star) {
-        star.classList.add(StarRatingComponent_1.CLS_HALF_STAR);
+        star.classList.add(StarRatingComponent.CLS_HALF_STAR);
     }
     setStars() {
         if (!this.mainElement)
@@ -197,10 +196,10 @@ let StarRatingComponent = StarRatingComponent_1 = class StarRatingComponent {
                 let newSize = this.size.match(/\d+/)[0];
                 let halfSize = (parseInt(newSize) * 10) / 24;
                 let halfMargin = 0 - ((parseInt(newSize) * 20) / 24);
-                star.style.setProperty(StarRatingComponent_1.VAR_SIZE, this.size);
-                if (star.classList.contains(StarRatingComponent_1.CLS_HALF_STAR)) {
-                    star.style.setProperty(StarRatingComponent_1.VAR_HALF_WIDTH, `${halfSize}px`);
-                    star.style.setProperty(StarRatingComponent_1.VAR_HALF_MARGIN, `${halfMargin}px`);
+                star.style.setProperty(StarRatingComponent.VAR_SIZE, this.size);
+                if (star.classList.contains(StarRatingComponent.CLS_HALF_STAR)) {
+                    star.style.setProperty(StarRatingComponent.VAR_HALF_WIDTH, `${halfSize}px`);
+                    star.style.setProperty(StarRatingComponent.VAR_HALF_MARGIN, `${halfMargin}px`);
                 }
             });
         }
@@ -221,10 +220,10 @@ let StarRatingComponent = StarRatingComponent_1 = class StarRatingComponent {
         this.applyUnCheckedColorStyle(starElement);
     }
     applyCheckedColorStyle(starElement) {
-        starElement.style.setProperty(StarRatingComponent_1.VAR_CHECKED_COLOR, this.checkedcolor);
+        starElement.style.setProperty(StarRatingComponent.VAR_CHECKED_COLOR, this.checkedcolor);
     }
     applyUnCheckedColorStyle(starElement) {
-        starElement.style.setProperty(StarRatingComponent_1.VAR_UNCHECKED_COLOR, this.uncheckedcolor);
+        starElement.style.setProperty(StarRatingComponent.VAR_UNCHECKED_COLOR, this.uncheckedcolor);
     }
     generateRating(forceGenerate = false) {
         if (!this.mainElement)
@@ -257,7 +256,7 @@ let StarRatingComponent = StarRatingComponent_1 = class StarRatingComponent {
         });
         //}
     }
-};
+}
 StarRatingComponent.VAR_CHECKED_COLOR = '--checkedColor';
 StarRatingComponent.VAR_UNCHECKED_COLOR = '--unCheckedColor';
 StarRatingComponent.VAR_SIZE = '--size';
@@ -272,56 +271,43 @@ StarRatingComponent.INP_VALUE = 'value';
 StarRatingComponent.INP_SIZE = 'size';
 StarRatingComponent.INP_READONLY = 'readonly';
 StarRatingComponent.INP_TOTALSTARS = 'totalstars';
-__decorate([
-    ViewChild('starMain', { static: true })
-], StarRatingComponent.prototype, "mainElement", void 0);
-__decorate([
-    Output()
-], StarRatingComponent.prototype, "rate", void 0);
-__decorate([
-    Input(StarRatingComponent_1.INP_CHECKED_COLOR)
-], StarRatingComponent.prototype, "checkedcolor", null);
-__decorate([
-    Input(StarRatingComponent_1.INP_UNCHECKED_COLOR)
-], StarRatingComponent.prototype, "uncheckedcolor", null);
-__decorate([
-    Input(StarRatingComponent_1.INP_VALUE)
-], StarRatingComponent.prototype, "value", null);
-__decorate([
-    Input(StarRatingComponent_1.INP_SIZE)
-], StarRatingComponent.prototype, "size", null);
-__decorate([
-    Input(StarRatingComponent_1.INP_READONLY)
-], StarRatingComponent.prototype, "readonly", null);
-__decorate([
-    Input(StarRatingComponent_1.INP_TOTALSTARS)
-], StarRatingComponent.prototype, "totalstars", null);
-StarRatingComponent = StarRatingComponent_1 = __decorate([
-    Component({
-        selector: 'star-rating',
-        template: "<div #starMain>\n</div>",
-        encapsulation: ViewEncapsulation.ShadowDom,
-        styles: [":root{--checkedColor:gold;--unCheckedColor:gray;--size:24px;--halfWidth:10px;--halfMargin:-20px}.star{cursor:pointer;color:var(--unCheckedColor);font-size:var(--size);width:var(--size);display:inline-block}.star:last-child{margin-right:0}.star:before{content:'\\2605'}.star.on{color:var(--checkedColor)}.star.half:after{content:'\\2605';color:var(--checkedColor);position:absolute;margin-left:var(--halfMargin);width:var(--halfWidth);overflow:hidden}"]
-    })
-], StarRatingComponent);
-
-let RatingModule = class RatingModule {
-    ngDoBootstrap() { }
+StarRatingComponent.decorators = [
+    { type: Component, args: [{
+                selector: 'star-rating',
+                template: "<div #starMain>\n</div>",
+                encapsulation: ViewEncapsulation.ShadowDom,
+                styles: [":root{--checkedColor:gold;--halfMargin:-20px;--halfWidth:10px;--size:24px;--unCheckedColor:grey}.star{color:var(--unCheckedColor);cursor:pointer;display:inline-block;font-size:var(--size);width:var(--size)}.star:last-child{margin-right:0}.star:before{content:\"\\2605\"}.star.half:after,.star.on{color:var(--checkedColor)}.star.half:after{content:\"\\2605\";margin-left:var(--halfMargin);overflow:hidden;position:absolute;width:var(--halfWidth)}"]
+            },] }
+];
+StarRatingComponent.ctorParameters = () => [];
+StarRatingComponent.propDecorators = {
+    mainElement: [{ type: ViewChild, args: ['starMain', { static: true },] }],
+    rate: [{ type: Output }],
+    checkedcolor: [{ type: Input, args: [StarRatingComponent.INP_CHECKED_COLOR,] }],
+    uncheckedcolor: [{ type: Input, args: [StarRatingComponent.INP_UNCHECKED_COLOR,] }],
+    value: [{ type: Input, args: [StarRatingComponent.INP_VALUE,] }],
+    size: [{ type: Input, args: [StarRatingComponent.INP_SIZE,] }],
+    readonly: [{ type: Input, args: [StarRatingComponent.INP_READONLY,] }],
+    totalstars: [{ type: Input, args: [StarRatingComponent.INP_TOTALSTARS,] }]
 };
-RatingModule = __decorate([
-    NgModule({
-        imports: [
-            FormsModule,
-            CommonModule
-        ],
-        declarations: [
-            RatingComponent,
-            StarRatingComponent
-        ],
-        exports: [StarRatingComponent],
-        entryComponents: [StarRatingComponent]
-    })
-], RatingModule);
+
+class RatingModule {
+    ngDoBootstrap() { }
+}
+RatingModule.decorators = [
+    { type: NgModule, args: [{
+                imports: [
+                    FormsModule,
+                    CommonModule
+                ],
+                declarations: [
+                    RatingComponent,
+                    StarRatingComponent
+                ],
+                exports: [StarRatingComponent],
+                entryComponents: [StarRatingComponent]
+            },] }
+];
 
 /*
  * Public API Surface of rating

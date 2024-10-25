@@ -1,12 +1,13 @@
 {
-  "name": "ng-starrating",
-  "version": "1.0.20",
+  "name": "@tahashahid/ng-starrating",
+  "version": "1.0.21",
   "peerDependencies": {
-    "@angular/common": "^9.0.1",
-    "@angular/core": "^9.0.1",
-    "tslib": "^1.10.0"
+    "@angular/common": "^10.2.5",
+    "@angular/core": "^10.2.5"
   },
-  "dependencies": {},
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/riteshgandhi/ng-star-rating"
@@ -35,13 +36,14 @@
   ],
   "license": "MIT",
   "main": "bundles/ng-starrating.umd.js",
-  "module": "fesm5/ng-starrating.js",
+  "module": "fesm2015/ng-starrating.js",
   "es2015": "fesm2015/ng-starrating.js",
-  "esm5": "esm5/ng-starrating.js",
   "esm2015": "esm2015/ng-starrating.js",
-  "fesm5": "fesm5/ng-starrating.js",
   "fesm2015": "fesm2015/ng-starrating.js",
   "typings": "ng-starrating.d.ts",
   "metadata": "ng-starrating.metadata.json",
-  "sideEffects": false
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  }
 }
